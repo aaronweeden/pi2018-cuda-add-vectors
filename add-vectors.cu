@@ -54,6 +54,9 @@ int main()
   int * deviceB;
   int * deviceC;
 
+  // Start a timer
+  double startTime = omp_get_wtime();
+
   // Allocate memory for the host arrays
   TryMalloc(hostA = (int*)malloc(BYTE_COUNT));
   TryMalloc(hostB = (int*)malloc(BYTE_COUNT));
@@ -103,6 +106,9 @@ int main()
   free(hostC);
   free(hostB);
   free(hostA);
+
+  // Stop the timer
+  printf("Runtime: %f seconds\n", omp_get_wtime() - startTime);
 
   return 0;
 }

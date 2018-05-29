@@ -18,6 +18,9 @@
 // Import library so we can call time()
 #include <time.h>
 
+// Import library so we can call omp_get_wtime()
+#include <omp.h>
+
 // Define the number of numbers in each array
 #define NUM_COUNT 10
 
